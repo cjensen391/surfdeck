@@ -63,8 +63,8 @@ else is needed. Linux: `psutil` may already be packaged as `python3-psutil`.
 surfdeck                        # the live dashboard (South Beach)
 surfdeck --theme hacker         # green-on-black instead of gold-and-blood
 surfdeck --units metric         # metres, km/h, Celsius
-surfdeck --spot sebastian-inlet # another spot
-surfdeck --list-spots
+surfdeck --spot 41st-street     # another spot, south to north up the coast
+surfdeck --list-spots           # South Beach through Jacksonville Beach
 surfdeck --once                 # one static report, pipe/MOTD friendly
 surfdeck --once --no-color --no-scene | mail -s "surf" me@example.com
 ```

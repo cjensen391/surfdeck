@@ -49,9 +49,15 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
 
     if args.list_spots:
+        # Columns size themselves so a long spot name never shunts the bearing.
+        key_width = max(len(key) for key in spots.SPOTS)
+        name_width = max(len(spot.name) for spot in spots.SPOTS.values())
         for key, spot in spots.SPOTS.items():
             marker = "*" if key == spots.DEFAULT_SPOT else " "
-            print(f"{marker} {key:<16} {spot.name:<22} faces {spot.facing_deg:.0f}°")
+            print(
+                f"{marker} {key:<{key_width}}  {spot.name:<{name_width}}  "
+                f"faces {spot.facing_deg:.0f}°"
+            )
         return 0
 
     try:
