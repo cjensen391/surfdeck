@@ -140,3 +140,8 @@ the whole thing is testable without a terminal or a socket:
 Add an entry to `SPOTS` in `surfdeck/spots.py` with its latitude, longitude,
 timezone, and `facing_deg` — the compass bearing the beach looks out toward.
 That bearing is what makes the offshore/onshore call correct.
+
+## License
+
+MIT — see [LICENSE](LICENSE). Open source: use it, fork it, sell it, just keep
+the copyright notice aboard.
