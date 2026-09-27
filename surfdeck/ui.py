@@ -42,13 +42,15 @@ RULE_MIN_HEIGHT = 26
 HELP_LINES = (
     "  q / ESC  abandon ship (quit)",
     "  r        re-read the buoys now",
-    "  t        cycle theme: pirate / hacker / tropical",
+    "  t        cycle theme: pirate / hacker / tropical / miami-vice",
     "  s        next spot",
     "  u        toggle imperial / metric",
     "  space    freeze the animation",
     "  + / -    animation speed",
     "  ?        close this parley",
 )
+# The overlay sizes itself to its longest line so a theme name never clips.
+HELP_WIDTH = max(len(line) for line in HELP_LINES) + 4
 
 
 class SurfFetcher:
@@ -232,7 +234,7 @@ class Dashboard:
 
     def draw_help(self) -> None:
         height, width = self.stdscr.getmaxyx()
-        box_w = min(52, width - 4)
+        box_w = min(max(52, HELP_WIDTH), width - 4)
         box_h = min(len(HELP_LINES) + 4, height - 2)
         top = max(0, (height - box_h) // 2)
         left = max(0, (width - box_w) // 2)

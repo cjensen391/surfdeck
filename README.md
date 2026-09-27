@@ -61,6 +61,7 @@ else is needed. Linux: `psutil` may already be packaged as `python3-psutil`.
 
 ```bash
 surfdeck                        # the live dashboard (South Beach)
+surfdeck --theme miami-vice     # neon pink and cyan, green readouts
 surfdeck --theme hacker         # green-on-black instead of gold-and-blood
 surfdeck --units metric         # metres, km/h, Celsius
 surfdeck --spot 41st-street     # another spot, south to north up the coast
@@ -75,7 +76,7 @@ surfdeck --once --no-color --no-scene | mail -s "surf" me@example.com
 | --- | --- |
 | `q` / `Esc` | quit |
 | `r` | re-read the buoys now (otherwise every 10 min) |
-| `t` | cycle theme: pirate → hacker → tropical |
+| `t` | cycle theme: pirate → hacker → tropical → miami-vice |
 | `s` | next spot |
 | `u` | imperial ↔ metric |
 | `space` | freeze the animation |

@@ -25,7 +25,9 @@ COLORS: dict[str, tuple[int, int]] = {
     "deep": (24, 4),
     "sea": (31, 6),
     "magenta": (201, 5),
+    "flamingo": (205, 5),
     "purple": (99, 5),
+    "violet": (57, 5),
     "cyan": (51, 6),
     "teal": (44, 6),
     "white": (255, 7),
@@ -137,9 +139,36 @@ THEMES: dict[str, Theme] = {
             }
         ),
     ),
+    # Neon Miami at 2am: pink-and-cyan sunset with the hacker's green readout
+    # bleeding through the numbers and the glyph rain.
+    "miami-vice": Theme(
+        "miami-vice",
+        _base(
+            {
+                "title": ("magenta", None, (BOLD,)),
+                "accent": ("cyan", None, (BOLD,)),
+                "header": ("flamingo", None, (BOLD,)),
+                "status": ("teal", None, ()),
+                "score": ("green", None, (BOLD,)),
+                "value": ("green", None, (BOLD,)),
+                "sea": ("violet", None, ()),
+                "crest": ("magenta", None, (BOLD,)),
+                "foam": ("cyan", None, (BOLD,)),
+                "ship": ("bone", None, ()),
+                "flag": ("flamingo", None, (BOLD,)),
+                "surfer": ("cyan", None, (BOLD,)),
+                "rain_head": ("green", None, (BOLD,)),
+                "rain_dim": ("purple", None, (DIM,)),
+                "label": ("teal", None, ()),
+                "sun": ("flamingo", None, (BOLD,)),
+                "gull": ("purple", None, (DIM,)),
+                "dolphin": ("cyan", None, ()),
+            }
+        ),
+    ),
 }
 
-THEME_ORDER = ("pirate", "hacker", "tropical")
+THEME_ORDER = ("pirate", "hacker", "tropical", "miami-vice")
 DEFAULT_THEME = "pirate"
 
 

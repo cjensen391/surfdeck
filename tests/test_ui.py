@@ -177,6 +177,16 @@ def test_keys_change_theme_units_spot_and_speed(dashboard):
     assert not board.show_help
 
 
+def test_help_overlay_shows_its_longest_line_whole(dashboard):
+    board, screen = dashboard(30, 110)
+    board.show_help = True
+    board.draw()
+    longest = max(ui.HELP_LINES, key=len).strip()
+    painted = [text for _y, _x, text, _attr in screen.writes]
+    assert any(longest in text for text in painted), "help line was clipped"
+    assert not board.stdscr.rejected()
+
+
 def test_quit_keys_stop_the_loop(dashboard):
     board, _screen = dashboard(30, 110)
     assert board.handle_key(ord("r")) is True
