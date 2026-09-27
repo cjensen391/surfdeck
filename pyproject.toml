@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "surfdeck"
+version = "0.1.0"
+description = "Pirate-flavored ncurses surf report and system monitor for macOS and Linux"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["psutil>=5.9"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+surfdeck = "surfdeck.cli:main"
+
+[tool.setuptools]
+packages = ["surfdeck"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
